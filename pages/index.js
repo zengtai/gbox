@@ -1,12 +1,12 @@
 import { getDataForHome } from "@/lib/api";
 import Head from "next/head";
 // import GameListItem from "@/components/GameListItem";
-import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
+import { ADS_SLOT_ID, SITE_META, TOP_GAMES } from "@/lib/constants";
 import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
 import ListTitle from "@/components/ListTitle";
-import { basePath } from "@/next.config";
+// import { basePath } from "@/next.config";
 import GameList from "@/components/GameList";
 
 export default function Home({ data }) {
@@ -58,12 +58,18 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = await getDataForHome({ limit: 18, page: 1 });
+  let data = await getDataForHome({ limit: 18, page: 1 });
+
+  if (TOP_GAMES) {
+    data.games.sort((a, b) =>
+      TOP_GAMES.indexOf(a.appid) > TOP_GAMES.indexOf(b.appid) ? 1 : -1
+    );
+  }
 
   return {
     props: {
       data,
     },
-    revalidate: 60 * 60 * 24, // 天
+    // revalidate: 60 * 60 * 24, // 天
   };
 }

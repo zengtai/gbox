@@ -3,7 +3,7 @@ import GameList from "@/components/GameList";
 // import GameListItem from "@/components/GameListItem";
 import { getAllGamesWithSlug, getGameDataBySlug } from "@/lib/api";
 import { SITE_META } from "@/lib/constants";
-import { basePath } from "@/next.config";
+// import { basePath } from "@/next.config";
 import Head from "next/head";
 
 export default function Game({ data }) {
@@ -58,7 +58,7 @@ export const getStaticProps = async (ctx) => {
     props: {
       data,
     },
-    revalidate: 60 * 60 * 24, // 天
+    // revalidate: 60 * 60 * 24, // 天
   };
 };
 

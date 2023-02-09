@@ -8,9 +8,10 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "development" ? false : true,
   },
+  basePath: `/webs/gpbox/v5`,
   trailingSlash: true,
-  basePath: "/webs/gpbox/v5",
 
+  distDir: "build",
   generateBuildId: async () => {
     // You can, for example, get the latest git commit hash here
     return "20230209";

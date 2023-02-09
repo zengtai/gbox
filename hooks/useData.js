@@ -26,7 +26,7 @@ export default function useCurrentData(limit) {
 
   const query = `
     query ($limit: Int) {
-      games: Games (filter: { status: { _eq: "published" } }, limit: $limit) {
+      games: Games (limit: $limit) {
         title
         slug
         appid
