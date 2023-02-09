@@ -25,7 +25,7 @@ export default function PaginatedPage({
     <>
       <Head>
         <title>{`${pageInfo?.name} Games - Page ${currentPage} | ${SITE_META.NAME}`}</title>
-        <link
+        {/* <link
           rel="canonical"
           href={`${SITE_META.URL}${basePath || ``}/category/${
             pageInfo.slug
@@ -35,7 +35,7 @@ export default function PaginatedPage({
         <meta
           name="keywords"
           content={`${categoryName} game, ${categoryName} games, free ${categoryName} game, free ${categoryName} games, ${categoryName} online game, ${categoryName} online games`}
-        />
+        /> */}
       </Head>
       <PaginationPage
         pageInfo={pageInfo}

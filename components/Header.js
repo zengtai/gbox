@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/public/images/PFG_LOGO3.svg";
+import Logo from "@/public/images/AG_LOGO.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -34,14 +34,15 @@ export default function Header() {
             <Link href={`/`} title={SITE_META.NAME}>
               <Image
                 src={Logo}
-                width="256"
-                height="50"
-                className="w-40 xl:w-56"
-                alt="PlayFreeGamer Logo"
+                width="128"
+                height="148"
+                className="w-8 xl:w-10"
+                alt={SITE_META.NAME}
               />
-              <span className="sr-only">PlayFreeGamer</span>
             </Link>
           </div>
+
+          <Navbar menuOpen={menuOpen} setMenuState={updateMenuState} />
           <div>
             <button
               onClick={() => setShowSearch(!showSearch)}
@@ -97,7 +98,6 @@ export default function Header() {
               )}
             </button>
           </div>
-          <Navbar menuOpen={menuOpen} setMenuState={updateMenuState} />
         </div>
       </header>
       <Suspense fallback={<div>Loading</div>}>

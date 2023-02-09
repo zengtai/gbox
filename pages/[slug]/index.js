@@ -30,7 +30,7 @@ export default function Game({ data }) {
       <Head>
         <title>{`${i.title} | ${SITE_META.NAME}`}</title>
 
-        <link
+        {/* <link
           rel="canonical"
           href={`${SITE_META.URL}${basePath || ``}/${i.slug}/`}
         />
@@ -40,7 +40,7 @@ export default function Game({ data }) {
         <meta
           name="keywords"
           content={`${i.title}, ${i.appid}, play ${i.title}, play ${i.appid}, ${i.title} game, ${i.appid} game, ${i.title} games, ${i.appid} games`}
-        />
+        /> */}
       </Head>
       <div className="hidden">{star()}</div>
       <div className="detail container">

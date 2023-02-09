@@ -7,6 +7,7 @@ import NProgress from "nprogress";
 import { useEffect } from "react";
 import { GA_ID } from "@/lib/constants";
 import * as gtag from "@/lib/gtag";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const Router = useRouter();
@@ -61,6 +62,9 @@ export default function App({ Component, pageProps }) {
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_ID}`}
         crossOrigin="anonymous"
       />
+      <Head>
+        <link rel="icon" href={`${Router.basePath || ``}/favicon.ico`} />
+      </Head>
       <Component {...pageProps} />
     </Layout>
   );

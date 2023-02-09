@@ -4,8 +4,9 @@ import Stars from "./Stars";
 import AdSense from "./AdSense";
 import { ADS_SLOT_ID } from "@/lib/constants";
 import getIconUrl from "@/utils/getIconUrl";
-import getGameUrl from "@/utils/getGameUrl";
+// import getGameUrl from "@/utils/getGameUrl";
 import getFormatedNum from "@/utils/getFormatedNum";
+import getGameRelativeUrl from "@/utils/getRelativeGameUrl";
 
 export default function GameDetail({ item }) {
   const i = item;
@@ -39,7 +40,7 @@ export default function GameDetail({ item }) {
       </div>
       <div className="mx-4 flex justify-center">
         <button className="play-btn">
-          <a title={`Play "${i.title}" Now`} href={getGameUrl(i.appid)}>
+          <a title={`Play "${i.title}" Now`} href={getGameRelativeUrl(i.appid)}>
             Play Now
           </a>
         </button>

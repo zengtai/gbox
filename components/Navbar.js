@@ -19,6 +19,10 @@ export default function Navbar({ menuOpen, setMenuState }) {
       link: `/`,
     },
     {
+      text: `Girl`,
+      link: `/category/girl/`,
+    },
+    {
       text: `Puzzle`,
       link: `/category/puzzle/`,
     },
@@ -61,10 +65,6 @@ export default function Navbar({ menuOpen, setMenuState }) {
     {
       text: `.IO`,
       link: `/category/io/`,
-    },
-    {
-      text: `Girl`,
-      link: `/category/girl/`,
     },
   ];
 

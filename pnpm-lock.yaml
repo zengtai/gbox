@@ -8,7 +8,6 @@ specifiers:
   eslint: 8.33.0
   eslint-config-next: 13.1.6
   next: 13.1.6
-  next-sitemap: ^3.1.49
   nprogress: ^0.2.0
   postcss: ^8.4.21
   prettier: ^2.8.3
@@ -26,7 +25,6 @@ dependencies:
   eslint: 8.33.0
   eslint-config-next: 13.1.6_zkdaqh7it7uc4cvz2haft7rc6u
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
-  next-sitemap: 3.1.49_dlcnecpznf2wc36zwuq5m2ie5q
   nprogress: 0.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -47,10 +45,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: false
-
-  /@corex/deepmerge/4.0.37:
-    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==}
     dev: false
 
   /@eslint/eslintrc/1.4.1:
@@ -1682,20 +1676,6 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
-    dev: false
-
-  /next-sitemap/3.1.49_dlcnecpznf2wc36zwuq5m2ie5q:
-    resolution: {integrity: sha512-bxBq+MQdi580PKn/8ert4X0RL8Kp9scvyiq6TmIpkCQC3bd4DResTyxHY2AuCGKz83ut2udHwKMZu3ztj3aq3w==}
-    engines: {node: '>=14.18'}
-    hasBin: true
-    peerDependencies:
-      '@next/env': '*'
-      next: '*'
-    dependencies:
-      '@corex/deepmerge': 4.0.37
-      '@next/env': 13.1.6
-      minimist: 1.2.7
-      next: 13.1.6_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /next/13.1.6_biqbaboplfbrettd7655fr4n2y:
