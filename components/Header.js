@@ -30,13 +30,13 @@ export default function Header() {
     <>
       <header className="site-header">
         <div className="container">
-          <div className="branding m-4">
+          <div className="branding my-2 mx-4 xl:m-4">
             <Link href={`/`} title={SITE_META.NAME}>
               <Image
                 src={Logo}
                 width="128"
                 height="148"
-                className="w-8 xl:w-10"
+                className="w-6 xl:w-10"
                 alt={SITE_META.NAME}
               />
             </Link>
@@ -66,7 +66,7 @@ export default function Header() {
             </button>
             <button
               onClick={toggleMenu}
-              className="m-3 p-2 text-white xl:hidden"
+              className="mx-2 p-2 text-white xl:hidden"
               title="Menu"
             >
               {!menuOpen ? (

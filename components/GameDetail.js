@@ -13,6 +13,7 @@ export default function GameDetail({ item }) {
   const randomKey = `${i.appid}-${Math.random()}`;
   return (
     <div className="mx-auto max-w-3xl">
+      <AdSense slot={ADS_SLOT_ID.DETAIL} key={randomKey} />
       <div className="info">
         <Image
           src={getIconUrl(i?.appid)}
@@ -46,7 +47,6 @@ export default function GameDetail({ item }) {
         </button>
       </div>
       <div className="desc">{i.description}</div>
-      <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} key={randomKey} />
     </div>
   );
 }
