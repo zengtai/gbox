@@ -9,7 +9,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "development" ? false : true,
   },
   trailingSlash: true,
-  basePath: "/webs/gbox/v5",
+  basePath: "/webs/gpbox/v5",
 };
 
 module.exports = nextConfig;
