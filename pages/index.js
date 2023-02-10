@@ -2,7 +2,7 @@ import { getDataForHome } from "@/lib/api";
 import Head from "next/head";
 // import GameListItem from "@/components/GameListItem";
 import { ADS_SLOT_ID, SITE_META, TOP_GAMES, SHOW_AD } from "@/lib/constants";
-import useCurrentData from "@/hooks/useData";
+// import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
 import ListTitle from "@/components/ListTitle";
@@ -30,8 +30,6 @@ export default function Home({ data }) {
     </svg>
   );
 
-  const tmp = useCurrentData();
-  console.log(`tmp`, tmp);
   const randomKey = `index-${Math.random()}`;
 
   return (
@@ -49,7 +47,7 @@ export default function Home({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
-        {SHOW_AD && <AdSense key={randomKey} />}
+        {SHOW_AD && <AdSense key={randomKey} slot={ADS_SLOT_ID.HOME} />}
         <ListTitle title={`Hot Games`} />
         <GameList items={games} />
       </div>

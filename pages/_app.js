@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import NProgress from "nprogress";
 import { useEffect } from "react";
-import { GA_ID, SHOW_AD } from "@/lib/constants";
+import { ADSENSE_ID, GA_ID, SHOW_AD } from "@/lib/constants";
 import * as gtag from "@/lib/gtag";
 import Head from "next/head";
 
@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }) {
         <Script
           id="ads-init"
           async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_ID}`}
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
           crossOrigin="anonymous"
         />
       )}
