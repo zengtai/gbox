@@ -7,7 +7,7 @@ import Header from "./Header";
 import { Nunito } from "@next/font/google";
 import { useState, useEffect } from "react";
 import ScrollTopButton from "./ScrollTopButton";
-const nunito = Nunito({ subsets: ["latin"] });
+// const nunito = Nunito({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -33,7 +33,8 @@ export default function Layout({ children }) {
   }
   return (
     <>
-      <div className={"flex min-h-screen flex-col " + nunito.className}>
+      {/* <div className={"flex min-h-screen flex-col " + nunito.className}> */}
+      <div className={"flex min-h-screen flex-col "}>
         <Header />
         <main className="main">{children}</main>
         <Footer />

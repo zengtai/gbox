@@ -1,11 +1,12 @@
-import { SITE_META } from "@/lib/constants";
-import Head from "next/head";
+import AdScript from "@/components/AdScript";
 import PaginationPage from "@/components/PaginationPage";
 import {
   getAllCategoryWithSlug,
   getDataByCategorySlug,
   getTotalCount,
 } from "@/lib/api";
+import { SITE_META } from "@/lib/constants";
+import Head from "next/head";
 // import { basePath } from "@/next.config";
 
 export const PER_PAGE = 18;
@@ -24,19 +25,9 @@ export default function PaginatedPage({
   return (
     <>
       <Head>
-        <title>{`${pageInfo?.name} Games - Page ${currentPage} | ${SITE_META.NAME}`}</title>
-        {/* <link
-          rel="canonical"
-          href={`${SITE_META.URL}${basePath || ``}/category/${
-            pageInfo.slug
-          }/${currentPage}/`}
-        />
-        <meta name="description" content={pageInfo.description} />
-        <meta
-          name="keywords"
-          content={`${categoryName} game, ${categoryName} games, free ${categoryName} game, free ${categoryName} games, ${categoryName} online game, ${categoryName} online games`}
-        /> */}
+        <title>{`${categoryName} Games - Page ${currentPage} | ${SITE_META.NAME}`}</title>
       </Head>
+      <AdScript />
       <PaginationPage
         pageInfo={pageInfo}
         games={games}

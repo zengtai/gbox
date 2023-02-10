@@ -13,8 +13,7 @@ export default function AdSense({
 }) {
   useEffect(() => {
     try {
-      let adsbygoogle = window.adsbygoogle || [];
-      adsbygoogle.push({});
+      (window.adsbygoogle || []).push({});
     } catch (e) {
       console.error(e.message);
     }

@@ -1,3 +1,4 @@
+import AdScript from "@/components/AdScript";
 import GameDetail from "@/components/GameDetail";
 import GameList from "@/components/GameList";
 // import GameListItem from "@/components/GameListItem";
@@ -29,19 +30,8 @@ export default function Game({ data }) {
     <>
       <Head>
         <title>{`${i.title} | ${SITE_META.NAME}`}</title>
-
-        {/* <link
-          rel="canonical"
-          href={`${SITE_META.URL}${basePath || ``}/${i.slug}/`}
-        />
-
-        <meta name="description" content={i.description} />
-
-        <meta
-          name="keywords"
-          content={`${i.title}, ${i.appid}, play ${i.title}, play ${i.appid}, ${i.title} game, ${i.appid} game, ${i.title} games, ${i.appid} games`}
-        /> */}
       </Head>
+      <AdScript />
       <div className="hidden">{star()}</div>
       <div className="detail container">
         {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}

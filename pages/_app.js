@@ -1,25 +1,18 @@
 import Layout from "@/components/Layout";
+import { GA_ID } from "@/lib/constants";
+import * as gtag from "@/lib/gtag";
 import "@/styles/globals.css";
 import "@/styles/nprogress.css";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import NProgress from "nprogress";
 import { useEffect } from "react";
-import { ADSENSE_ID, GA_ID, SHOW_AD } from "@/lib/constants";
-import * as gtag from "@/lib/gtag";
-import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const Router = useRouter();
 
   console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
-
-  const showAdSense =
-    !(
-      Router.pathname === "/_error" ||
-      Router.pathname === "/privacy-policy" ||
-      Router.pathname === "/terms-of-use"
-    ) && SHOW_AD;
 
   useEffect(() => {
     const handleStart = (url) => {
@@ -65,14 +58,6 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      {showAdSense && (
-        <Script
-          id="ads-init"
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-          crossOrigin="anonymous"
-        />
-      )}
       <Head>
         <link rel="icon" href={`${Router.basePath || ``}/favicon.ico`} />
       </Head>
