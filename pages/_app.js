@@ -11,7 +11,15 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const Router = useRouter();
-  // console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
+
+  console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
+
+  const showAdSense = !(
+    Router.pathname === "/_error" ||
+    Router.pathname === "/privacy-policy" ||
+    Router.pathname === "/terms-of-use"
+  );
+
   useEffect(() => {
     const handleStart = (url) => {
       console.log(`Loading: ${url}`);
@@ -56,12 +64,14 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      <Script
-        id="ads-init"
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_ID}`}
-        crossOrigin="anonymous"
-      />
+      {showAdSense && (
+        <Script
+          id="ads-init"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_ID}`}
+          crossOrigin="anonymous"
+        />
+      )}
       <Head>
         <link rel="icon" href={`${Router.basePath || ``}/favicon.ico`} />
       </Head>

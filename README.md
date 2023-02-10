@@ -12,3 +12,4 @@
 - 自定义 buildid
 - 移除 ads.txt
 - 移除 sitemap
+- 避免在错误页和政策页添加 AdSense 代码
