@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Fragment, useState } from "react";
 
-import useCurrentData from "@/hooks/useData";
+// import useCurrentData from "@/hooks/useData";
+
+import { data } from "@/data/searchResult";
 
 import getIconUrl from "@/utils/getIconUrl";
 
@@ -12,8 +14,7 @@ export default function SearchPanel({ isShow, updateState }) {
   const [isOpen, setIsOpen] = useState(isShow); // 控制显示
   const [query, setQuery] = useState("");
 
-  const searchData = useCurrentData();
-  console.log(`searchData: `, searchData);
+  // const searchData = useCurrentData();
 
   function handleClick() {
     updateState(!isOpen);
@@ -42,7 +43,9 @@ export default function SearchPanel({ isShow, updateState }) {
   // }, [isOpen]);
 
   // let names = data;
-  const names = useCurrentData();
+  const names = data;
+  // const names = useCurrentData();
+
   // console.log(`tmp: `, tmp);
 
   // let names = repairData(tmp);
