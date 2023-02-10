@@ -1,4 +1,4 @@
-import { ADS_SLOT_ID } from "@/lib/constants";
+import { ADS_SLOT_ID, SHOW_AD } from "@/lib/constants";
 import AdSense from "./AdSense";
 import GameList from "./GameList";
 // import GameListItem from "./GameListItem";
@@ -35,9 +35,9 @@ export default function PaginationPage({
     <>
       <div className="hidden">{star()}</div>
       <div className="container">
-        {currentPage === 1 ? (
-          <AdSense slot={ADS_SLOT_ID.CATEGORY} key={randomKey} />
-        ) : null}
+        {currentPage === 1
+          ? SHOW_AD && <AdSense slot={ADS_SLOT_ID.CATEGORY} key={randomKey} />
+          : null}
         {/* <header className="m-4 flex flex-col items-center">
           <h1 className="mb-2 text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8">
             {pageInfo.name} Games

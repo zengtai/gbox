@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import NProgress from "nprogress";
 import { useEffect } from "react";
-import { GA_ID } from "@/lib/constants";
+import { GA_ID, SHOW_AD } from "@/lib/constants";
 import * as gtag from "@/lib/gtag";
 import Head from "next/head";
 
@@ -14,11 +14,12 @@ export default function App({ Component, pageProps }) {
 
   console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
 
-  const showAdSense = !(
-    Router.pathname === "/_error" ||
-    Router.pathname === "/privacy-policy" ||
-    Router.pathname === "/terms-of-use"
-  );
+  const showAdSense =
+    !(
+      Router.pathname === "/_error" ||
+      Router.pathname === "/privacy-policy" ||
+      Router.pathname === "/terms-of-use"
+    ) && SHOW_AD;
 
   useEffect(() => {
     const handleStart = (url) => {

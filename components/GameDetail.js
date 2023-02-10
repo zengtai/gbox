@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "./Image";
 import Stars from "./Stars";
 import AdSense from "./AdSense";
-import { ADS_SLOT_ID } from "@/lib/constants";
+import { ADS_SLOT_ID, SHOW_AD } from "@/lib/constants";
 import getIconUrl from "@/utils/getIconUrl";
 // import getGameUrl from "@/utils/getGameUrl";
 import getFormatedNum from "@/utils/getFormatedNum";
@@ -13,7 +13,7 @@ export default function GameDetail({ item }) {
   const randomKey = `${i.appid}-${Math.random()}`;
   return (
     <div className="mx-auto max-w-3xl">
-      <AdSense slot={ADS_SLOT_ID.DETAIL} key={randomKey} />
+      {SHOW_AD && <AdSense slot={ADS_SLOT_ID.DETAIL} key={randomKey} />}
       <div className="info">
         <Image
           src={getIconUrl(i?.appid)}

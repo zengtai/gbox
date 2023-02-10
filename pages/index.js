@@ -1,7 +1,7 @@
 import { getDataForHome } from "@/lib/api";
 import Head from "next/head";
 // import GameListItem from "@/components/GameListItem";
-import { ADS_SLOT_ID, SITE_META, TOP_GAMES } from "@/lib/constants";
+import { ADS_SLOT_ID, SITE_META, TOP_GAMES, SHOW_AD } from "@/lib/constants";
 import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
@@ -49,7 +49,7 @@ export default function Home({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
-        <AdSense key={randomKey} />
+        {SHOW_AD && <AdSense key={randomKey} />}
         <ListTitle title={`Hot Games`} />
         <GameList items={games} />
       </div>
