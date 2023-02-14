@@ -100,7 +100,7 @@
 }
 
 .info-image {
-  @apply w-28 rounded-2xl object-cover shadow-md xl:w-48;
+  @apply h-28 w-28 rounded-2xl object-cover shadow-md xl:h-48 xl:w-48;
 }
 
 .info .meta {

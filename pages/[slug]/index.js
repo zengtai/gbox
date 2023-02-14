@@ -1,15 +1,22 @@
 import AdScript from "@/components/AdScript";
 import GameDetail from "@/components/GameDetail";
 import GameList from "@/components/GameList";
+import Player from "@/components/Player";
 // import GameListItem from "@/components/GameListItem";
 import { getAllGamesWithSlug, getGameDataBySlug } from "@/lib/api";
 import { SITE_META } from "@/lib/constants";
 // import { basePath } from "@/next.config";
 import Head from "next/head";
 
+import getGameUrl from "@/utils/getGameUrl";
+import { useEffect, useState } from "react";
+
 export default function Game({ data }) {
   console.log(`data`, data);
   const i = data?.game;
+  console.log(`appid: `, i.appid);
+
+  // const src = getGameUrl(i.appid);
 
   const star = () => (
     <svg
