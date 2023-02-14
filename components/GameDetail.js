@@ -20,25 +20,27 @@ export default function GameDetail({ item }) {
   useEffect(() => {
     const viewPortHeight = window.innerHeight;
     const viewPortWidth = window.innerWidth;
-    if (viewPortWidth / viewPortHeight <= 4 / 5) {
-      setScreenHeight(window.innerHeight);
-      setScreenWidth((window.innerHeight * 9) / 16);
+    if (viewPortWidth / viewPortHeight > 1) {
+      setScreenHeight(viewPortHeight);
+      setScreenWidth((viewPortHeight * 9) / 16);
     } else {
-      setScreenWidth(window.innerWidth);
-      setScreenHeight((window.innerWidth * 9) / 16);
+      setScreenWidth(viewPortWidth);
+      setScreenHeight((viewPortWidth * 9) / 16);
     }
   }, []);
 
   function handleClick() {
     console.log(`点击play`);
-    document.documentElement.style.overflow = "hidden";
-    document.documentElement.style.height = "100vh";
+    document.documentElement.style.overflow = !playerShow ? "hidden" : "";
+    document.documentElement.style.height = !playerShow ? "100vh" : "";
     setPlayerShow(true);
     setSrc(i.game_url2 !== null ? i.game_url2 : getGameUrl(i.appid));
     // setSrc(getGameUrl(i.appid));
   }
   function updatePlayerState(newState) {
     setPlayerShow(newState);
+    document.documentElement.style.overflow = !playerShow ? "hidden" : "";
+    document.documentElement.style.height = !playerShow ? "100vh" : "";
   }
 
   const i = item;
@@ -87,8 +89,8 @@ export default function GameDetail({ item }) {
       {playerShow ? (
         <Player
           src={src}
-          // width={screenWidth}
-          // height={screenHeight}
+          width={screenWidth}
+          height={screenHeight}
           isShow={playerShow}
           updateState={updatePlayerState}
         />

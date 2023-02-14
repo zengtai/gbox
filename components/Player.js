@@ -28,7 +28,10 @@ export default function Player({ src, width, height, isShow, updateState }) {
   return (
     <>
       {show ? (
-        <div className="fixed inset-0 z-30 overflow-hidden bg-black/20">
+        <div
+          className="fixed inset-0 z-30 overflow-hidden bg-black/80"
+          onClick={handleClick}
+        >
           <Draggable
             nodeRef={nodeRef}
             axis="y"
@@ -63,7 +66,7 @@ export default function Player({ src, width, height, isShow, updateState }) {
           </Draggable>
           <iframe
             allowFullScreen={true}
-            className="min-h-screen w-screen bg-black"
+            className="max-w-screen mx-auto min-h-screen bg-black"
             width={width}
             height={height}
             src={src}
