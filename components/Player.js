@@ -11,13 +11,13 @@ export default function Player({ src, width, height, isShow, updateState }) {
     console.log(`click back`);
   }
 
-  function handleStart(params) {
+  function handleStart() {
     setIsClick(true);
   }
-  function handleDrag(params) {
+  function handleDrag() {
     setIsClick(false);
   }
-  function handleEnd(params) {
+  function handleEnd() {
     if (isClick) {
       handleClick();
     }
@@ -44,7 +44,7 @@ export default function Player({ src, width, height, isShow, updateState }) {
               id="closePlayer"
               ref={nodeRef}
               // onClick={isClick ? handleClick : null}
-              className="absolute top-2 left-0 z-40 flex h-12 w-12 cursor-pointer items-center justify-center rounded-r-full border-y-4 border-r-4 border-white/20 bg-rose-500/80"
+              className="absolute top-2 left-0 z-40 flex h-12 w-12 cursor-pointer items-center justify-center rounded-r-full border-y-4 border-r-4 border-white/20 bg-rose-500/80 xl:hidden"
             >
               <span>
                 <svg
