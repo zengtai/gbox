@@ -8,6 +8,7 @@ import {
 import { SITE_META } from "@/lib/constants";
 import Head from "next/head";
 // import { basePath } from "@/next.config";
+import FacebookPixel from "@/components/FacebookPixel";
 
 export const PER_PAGE = 18;
 
@@ -27,6 +28,7 @@ export default function PaginatedPage({
       <Head>
         <title>{`${categoryName} Games - Page ${currentPage} | ${SITE_META.NAME}`}</title>
       </Head>
+      <FacebookPixel />
       <AdScript />
       <PaginationPage
         pageInfo={pageInfo}

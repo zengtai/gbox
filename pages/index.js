@@ -9,6 +9,7 @@ import ListTitle from "@/components/ListTitle";
 // import { basePath } from "@/next.config";
 import AdScript from "@/components/AdScript";
 import GameList from "@/components/GameList";
+import FacebookPixel from "@/components/FacebookPixel";
 
 export default function Home({ data }) {
   console.log("🚀 ~ file: index.js:12 ~ Home ~ data", data);
@@ -38,6 +39,7 @@ export default function Home({ data }) {
       <Head>
         <title>{SITE_META.NAME}</title>
       </Head>
+      <FacebookPixel />
       <AdScript />
       <div className="hidden">{star()}</div>
       <div className="container">

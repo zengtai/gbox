@@ -7,6 +7,7 @@ import { getAllGamesWithSlug, getGameDataBySlug } from "@/lib/api";
 import { SITE_META } from "@/lib/constants";
 // import { basePath } from "@/next.config";
 import Head from "next/head";
+import FacebookPixel from "@/components/FacebookPixel";
 
 import getGameUrl from "@/utils/getGameUrl";
 import { useEffect, useState } from "react";
@@ -38,6 +39,7 @@ export default function Game({ data }) {
       <Head>
         <title>{`${i.title} | ${SITE_META.NAME}`}</title>
       </Head>
+      <FacebookPixel />
       <AdScript />
       <div className="hidden">{star()}</div>
       <div className="detail container">
